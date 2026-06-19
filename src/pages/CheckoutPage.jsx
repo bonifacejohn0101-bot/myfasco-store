@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import productImage from '../assets/image.png';
 
 const CheckoutPage = () => {
   // Contact and Shipping Form State
@@ -28,7 +29,7 @@ const CheckoutPage = () => {
     color: 'Red',
     price: 100.00,
     quantity: 1,
-    img: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=150'
+    img: productImage
   };
 
   const subtotal = lineItem.price * lineItem.quantity;

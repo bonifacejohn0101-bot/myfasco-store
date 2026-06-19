@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavLink } from 'react-router';
+import productImage from '../assets/image.png';
 
 const ShoppingCartPage = () => {
   // Main state matrix managing active line items in the cart view
@@ -11,7 +12,7 @@ const ShoppingCartPage = () => {
       color: 'Red',
       price: 14.90,
       quantity: 1,
-      img: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=300'
+      img: productImage
     }
   ]);
 

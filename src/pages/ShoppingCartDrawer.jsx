@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { NavLink } from 'react-router';
+import productImage from "../assets/image.png";
 const ShoppingCartDrawer = () => {
   // Toggle status for presentation visibility
   const [isOpen, setIsOpen] = useState(true);
@@ -12,7 +13,7 @@ const ShoppingCartDrawer = () => {
     color: 'Red',
     price: 14.80,
     quantity: 1,
-    img: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=300'
+    img: productImage
   });
   
   const [wrapProduct, setWrapProduct] = useState(false);

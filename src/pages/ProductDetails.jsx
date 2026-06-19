@@ -1,4 +1,10 @@
 import {NavLink} from 'react-router';
+import productImage1 from '../assets/image.png';
+import productImage2 from '../assets/image (1).png';
+import productImage3 from '../assets/image (2).png';
+import productImage4 from '../assets/image (3).png';
+import productImage5 from '../assets/image (4).png';
+import productImage6 from '../assets/image (6).png';
 
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,12 +29,12 @@ const ProductDetails = () => {
   }, []);
 
   const images = [
-    'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=600', // Red/Denim jacket view
-    'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=600',
-    'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=600',
-    'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600',
-    'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=600',
-    'https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&q=80&w=600'
+    productImage1, // Red/Denim jacket view
+    productImage2,
+    productImage3,
+    productImage4,
+    productImage5,
+    productImage6
   ];
   const [activeImage, setActiveImage] = useState(images[1]);
 
