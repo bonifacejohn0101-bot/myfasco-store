@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
-
-
+import arrivalImage3 from '../assets/Images (3).png';
+import arrivalImage4 from '../assets/Images (4).png';
+import arrivalImage5 from '../assets/Images (5).png';
+import arrivalImage6 from '../assets/Images (6).png';
 
  function NewArrivals() {
   // Navigation 
@@ -56,7 +58,7 @@ import {useEffect, useState} from 'react';
       reviews: "4.1k",
       price: "$95.50",
       status: "Almost Sold Out",
-      image: "src/assets/Images (3).png"
+      image: arrivalImage3
     },
     {
       id: 4,
@@ -66,7 +68,7 @@ import {useEffect, useState} from 'react';
       reviews: "4.1k",
       price: "$95.50",
       status: "Almost Sold Out",
-      image: "src/assets/Images (4).png"
+      image: arrivalImage4
     },
     {
       id: 5,
@@ -76,7 +78,7 @@ import {useEffect, useState} from 'react';
       reviews: "4.1k",
       price: "$95.50",
       status: "Almost Sold Out",
-      image: "src/assets/Images (5).png"
+      image: arrivalImage5
     },
     {
       id: 6,
@@ -86,7 +88,7 @@ import {useEffect, useState} from 'react';
       reviews: "4.1k",
       price: "$95.50",
       status: "Almost Sold Out",
-      image: "src/assets/Images (6).png"
+      image: arrivalImage6
     })),
   ];
 

@@ -1,12 +1,20 @@
+import instagramImage1 from '../assets/image (7).png';
+import instagramImage2 from '../assets/image (8).png';
+import instagramImage3 from '../assets/image (9).png';
+import instagramImage4 from '../assets/image (10).png';
+import instagramImage5 from '../assets/image (11).png';
+import instagramImage6 from '../assets/image (12).png';
+import instagramImage7 from '../assets/image (13).png';
+
 function InstagramFeed() {
   const images = [
-    'src/assets/image (7).png',
-    'src/assets/image (8).png',
-    'src/assets/image (9).png',
-    'src/assets/image (10).png',
-    'src/assets/image (11).png',
-    'src/assets/image (12).png',
-    'src/assets/image (13).png'
+    instagramImage1,
+    instagramImage2,
+    instagramImage3,
+    instagramImage4,
+    instagramImage5,
+    instagramImage6,
+    instagramImage7,
   ];
 
   return (

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import customerImage1 from '../assets/image (14).png';
+import customerImage2 from '../assets/image (15).png';
+import customerImage3 from '../assets/Images (1).png';
 
 const CustomerTestimonials = () => {
   const [activeIndex, setActiveIndex] = useState(1); // Default to middle card active
@@ -9,7 +12,7 @@ const CustomerTestimonials = () => {
       id: 0,
       name: 'Sarah M.',
       role: 'Designer',
-      image: 'src/assets/image (14).png',
+      image: customerImage1,
       text: '"The customer support went above and beyond. The product is incredibly intuitive, elegant, and saved our team hours of manual work every single week."',
       rating: 5,
     },
@@ -17,7 +20,7 @@ const CustomerTestimonials = () => {
       id: 1,
       name: 'James K.',
       role: 'Traveler',
-      image: 'src/assets/image (15).png',
+      image: customerImage2,
       text: '"You won\'t regret it. I would like to personally thank you for your outstanding product. Absolutely wonderful!"',
       rating: 5,
     },
@@ -25,7 +28,7 @@ const CustomerTestimonials = () => {
       id: 2,
       name: 'John W.',
       role: 'Entrepreneur',
-      image: 'src/assets/Images (1).png',
+      image: customerImage3,
       text: '"Exactly what I was looking for. Thank you for making it pleasant and most of all hassle free! All reviews are great."',
       rating: 5,
     },

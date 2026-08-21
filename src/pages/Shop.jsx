@@ -1,6 +1,14 @@
 import PeakyBlinderSelection from "../Components/PeakyBlinderSelection";
 import NavBar2 from "../Components/NavBar2";
 import {useEffect, useState} from "react";
+import shopImage1 from '../assets/Link ⏵ responsive-image (1).png';
+import shopImage2 from '../assets/Link ⏵ responsive-image (3).png';
+import shopImage3 from '../assets/Link ⏵ responsive-image (4).png';
+import shopImage4 from '../assets/Link ⏵ responsive-image (5).png';
+import shopImage5 from '../assets/Link ⏵ responsive-image (6).png';
+import shopImage6 from '../assets/Link ⏵ responsive-image (7).png';
+import shopImage7 from '../assets/Link ⏵ responsive-image (8).png';
+import shopImage8 from '../assets/Link ⏵ responsive-image.png';
 
 export default function FashionShop() {
 
@@ -25,44 +33,44 @@ export default function FashionShop() {
     {
       name: "Linen-blend Shirt",
       price: "$17.00",
-      img: "src/assets/Link ⏵ responsive-image (1).png",
+      img: shopImage1,
     },
     {
       name: "Long-sleeve Coat",
       price: "$106.00",
-      img: "src/assets/Link ⏵ responsive-image (3).png",
+      img: shopImage2,
     },
     {
       name: "Boxy Denim Hat",
       price: "$25.00",
-      img: "src/assets/Link ⏵ responsive-image (4).png",
+      img: shopImage3,
     },
     {
       name: "Linen Plain Top",
       price: "$25.00",
-      img: "src/assets/Link ⏵ responsive-image (5).png",
+      img: shopImage4,
     },
     {
       name: "Oversized T-shirt",
       price: "$11.00",
       old: "$14.00",
-      img: "src/assets/Link ⏵ responsive-image (6).png",
+      img: shopImage5,
     },
     {
       name: "Polarised Sunglasses",
       price: "$18.00",
       old: "$21.00",
-      img: "src/assets/Link ⏵ responsive-image (7).png",
+      img: shopImage6,
     },
     {
       name: "Rockstar Jacket",
       price: "$22.00",
-      img: "src/assets/Link ⏵ responsive-image (8).png",
+      img: shopImage7,
     },
     {
       name: "Dotted Black Dress",
       price: "$20.00",
-      img: "src/assets/Link ⏵ responsive-image.png",
+      img: shopImage8,
     }))
   ];
 
