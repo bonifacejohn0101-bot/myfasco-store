@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import peakyModel from '../assets/image (4).png';
 
 export default function PeakyBlindersCard() {
   return (
@@ -24,7 +25,7 @@ export default function PeakyBlindersCard() {
         <div className="col-md-6 position-relative d-flex align-items-center justify-content-center">
           {/* Model Image */}
           <img
-            src="src/assets/image (4).png"
+            src={peakyModel}
             alt="fashion"
             className="img-fluid position-relative"
             style={{

@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import signInBanner from '../assets/Rectangle 19280.png';
+import googleIcon from '../assets/image 939.png';
+import emailIcon from '../assets/image 940.png';
 
 const signin = () => {
   return (
@@ -13,7 +16,7 @@ const signin = () => {
         {/* Left Side: Image Banner */}
         <div className="col-md-6 p-0 d-none d-md-block">
           <img 
-            src="src/assets/Rectangle 19280.png" 
+            src={signInBanner} 
             alt="FASCO Fashion" 
             className="w-100 h-100"
             style={{ objectFit: 'cover', minHeight: '550px' }}
@@ -41,7 +44,7 @@ const signin = () => {
               <div className="col-6">
                 <button className="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center btn-sm text-nowrap" style={{ borderColor: '#dcdcdc', borderRadius: '6px', fontSize: '0.85rem' }}>
                   <img 
-                    src="src/assets/image 939.png" 
+                    src={googleIcon} 
                     alt="Google" 
                     className="me-2" 
                     style={{ width: '16px' }} 
@@ -51,7 +54,7 @@ const signin = () => {
               </div>
               <div className="col-6">
                 <button className="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center btn-sm text-nowrap" style={{ borderColor: '#dcdcdc', borderRadius: '6px', fontSize: '0.85rem' }}>
-                    <img src='src/assets/image 940.png'
+                    <img src={emailIcon}
                      className='me-2'
                      style={{width: '16px'}}
                      />

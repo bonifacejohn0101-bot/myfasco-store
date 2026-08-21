@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import signUpBanner from '../assets/Rectangle 19280 copy.png';
+import googleIcon from '../assets/image 939.png';
+import emailIcon from '../assets/image 940.png';
 
 const SignUp = () => {
   return (
@@ -13,7 +16,7 @@ const SignUp = () => {
         {/* Left Side: Image Banner */}
         <div className="col-md-6 p-0 d-none d-md-block">
           <img 
-            src="src/assets/Rectangle 19280 copy.png" 
+            src={signUpBanner} 
             alt="FASCO Sign Up Banner" 
             className="w-100 h-100"
             style={{ objectFit: 'cover', minHeight: '600px' }}
@@ -41,7 +44,7 @@ const SignUp = () => {
               <div className="col-6">
                 <button className="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center btn-sm text-nowrap" style={{ borderColor: '#dcdcdc', borderRadius: '6px', fontSize: '0.85rem' }}>
                   <img 
-                    src="src/assets/image 939.png" 
+                    src={googleIcon} 
                     alt="Google" 
                     className="me-2" 
                     style={{ width: '16px' }} 
@@ -51,7 +54,7 @@ const SignUp = () => {
               </div>
               <div className="col-6">
                 <button className="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center btn-sm text-nowrap" style={{ borderColor: '#dcdcdc', borderRadius: '6px', fontSize: '0.85rem' }}>
-                  <img src='src/assets/image 940.png' alt="_logo.svg" className='me-2' style={{width: '16px'}} />
+                  <img src={emailIcon} alt="_logo.svg" className='me-2' style={{width: '16px'}} />
                   Sign up with Email
                 </button>
               </div>

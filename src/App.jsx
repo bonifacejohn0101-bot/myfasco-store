@@ -11,6 +11,20 @@ import Web from './App';
 import Navbar from './Components/Navbar';
 import { NavLink } from 'react-router';
 
+import heroLeft from './assets/image 2 28.png';
+import heroCenterTop from './assets/images.png';
+import heroCenterBottom from './assets/image.png';
+import heroRight from './assets/image 227.png';
+import logoOne from './assets/logo.png';
+import logoTwo from './assets/logo (1).png';
+import logoThree from './assets/logo (2).png';
+import logoFour from './assets/logo (3).png';
+import logoFive from './assets/logo copy.png';
+import iconQuality from './assets/icon.png';
+import iconWarranty from './assets/icon (1).png';
+import iconShipping from './assets/2891214031638194523 1.png';
+import iconSupport from './assets/vector.png';
+
 
 const App = () => {
   const handleScrollToTop = () => {
@@ -36,7 +50,7 @@ const App = () => {
             }}
           >
             <img
-              src="src/assets/image 2 28.png"
+              src={heroLeft}
               alt="model"
               className="img-fluid"
               style={{
@@ -61,7 +75,7 @@ const App = () => {
               }}
             >
               <img
-                src="src/assets/images.png"
+                src={heroCenterTop}
                 alt=""
                 className="img-fluid rounded"
                 style={{ width: "100%", objectFit: "cover" }} />
@@ -133,7 +147,7 @@ const App = () => {
               }}
             >
               <img
-                src="src/assets/image.png"
+                src={heroCenterBottom}
                 alt=""
                 className="img-fluid rounded"
                 style={{
@@ -159,7 +173,7 @@ const App = () => {
             }}
           >
             <img
-              src="src/assets/image 227.png"
+              src={heroRight}
               alt="model"
               className="img-fluid"
               style={{
@@ -207,19 +221,19 @@ const App = () => {
         <div className="container text-center py-5">
           <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div className="col">
-              <img src='src/assets/logo.png' />
+              <img src={logoOne} alt="brand logo" />
             </div>
             <div className="col">
-              <img src='src/assets/logo (1).png' />
+              <img src={logoTwo} alt="brand logo" />
             </div>
             <div className="col">
-              <img src='src/assets/logo (2).png' />
+              <img src={logoThree} alt="brand logo" />
             </div>
             <div className="col">
-              <img src='src/assets/logo (3).png' />
+              <img src={logoFour} alt="brand logo" />
             </div>
             <div className="col">
-              <img src='src/assets/logo copy.png' />
+              <img src={logoFive} alt="brand logo" />
             </div>
           </div>
           <DealsOfTheMonth />
@@ -236,7 +250,7 @@ const App = () => {
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 text-center align-items-center">
               <div className="col">
                 <div className="p-4 rounded-4 h-100 d-flex align-items-center gap-3">
-                  <img src="src/assets/icon.png" alt="High Quality" style={{ width: '48px', height: '48px' }} />
+                  <img src={iconQuality} alt="High Quality" style={{ width: '48px', height: '48px' }} />
                   <div className="text-start">
                     <h6 className="fw-semibold mb-1">High Quality</h6>
                     <p className="text-muted mb-0">crafted from top materials</p>
@@ -245,7 +259,7 @@ const App = () => {
               </div>
               <div className="col">
                 <div className="p-4 rounded-4 h-100 d-flex align-items-center gap-3">
-                  <img src="src/assets/icon (1).png" alt="Warranty Protection" style={{ width: '48px', height: '48px' }} />
+                  <img src={iconWarranty} alt="Warranty Protection" style={{ width: '48px', height: '48px' }} />
                   <div className="text-start">
                     <h6 className="fw-semibold mb-1">Warranty Protection</h6>
                     <p className="text-muted mb-0">Over 2 years</p>
@@ -254,7 +268,7 @@ const App = () => {
               </div>
               <div className="col">
                 <div className="p-4 rounded-4 h-100 d-flex align-items-center gap-3">
-                  <img src="src/assets/2891214031638194523 1.png.png" alt="Free Shipping" style={{ width: '48px', height: '48px' }} />
+                  <img src={iconShipping} alt="Free Shipping" style={{ width: '48px', height: '48px' }} />
                   <div className="text-start">
                     <h6 className="fw-semibold mb-1">Free Shipping</h6>
                     <p className="text-muted mb-0">Order over $150</p>
@@ -263,7 +277,7 @@ const App = () => {
               </div>
               <div className="col">
                 <div className="p-4 rounded-4 h-100 d-flex align-items-center gap-3">
-                  <img src="src/assets/vector.png" alt="24/7 Support" style={{ width: '48px', height: '48px' }} />
+                  <img src={iconSupport} alt="24/7 Support" style={{ width: '48px', height: '48px' }} />
                   <div className="text-start">
                     <h6 className="fw-semibold mb-1">24 / 7 Support</h6>
                     <p className="text-muted mb-0">Dedicated support</p>

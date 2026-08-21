@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import resetBanner from '../assets/Rectangle 19280.png';
 
 const EnterNewPassword = () => {
   return (
@@ -13,7 +14,7 @@ const EnterNewPassword = () => {
         {/* Left Side: Image Banner */}
         <div className="col-md-6 p-0 d-none d-md-block">
           <img 
-            src="src/assets/Rectangle 19280.png" 
+            src={resetBanner} 
             alt="FASCO Fashion Banner" 
             className="w-100 h-100"
             style={{ objectFit: 'cover', minHeight: '550px' }}

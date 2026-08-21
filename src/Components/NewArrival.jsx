@@ -149,7 +149,7 @@ import {useEffect, useState} from 'react';
                     <div className="d-flex justify-content-between align-items-start mb-1">
                       <h5 className="card-title fw-bold text-dark mb-0 fs-6">{item.title}</h5>
                       <div className="text-warning small">
-                        {Array.from({ length: item.rating.count }).map((_, index) => (
+                        {Array.from({ length: 5 }).map((_, index) => (
                           <span key={index}>★</span>
                         ))}
                       </div>

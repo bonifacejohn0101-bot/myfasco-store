@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import maleModel from '../assets/image 2.png';
+import femaleModel from '../assets/image 3.png';
 
 const NewsletterFooter = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +25,7 @@ const NewsletterFooter = () => {
             {/* Left Column: Symmetrical Male Model Showcase */}
             <div className="col-12 col-md-3 d-none d-md-block text-start position-relative">
               <img 
-                src="src/assets/image 2.png" 
+                src={maleModel} 
                 alt="Male Fashion Model" 
                 className="img-fluid object-fit-contain fashion-model-img"
                 style={{ maxHeight: '520px', transform: 'scaleX(-1)' }} // Mirroring aesthetic layout
@@ -73,7 +75,7 @@ const NewsletterFooter = () => {
             {/* Right Column: Symmetrical Female Model Showcase */}
             <div className="col-12 col-md-3 d-none d-md-block text-end position-relative">
               <img 
-                src="src/assets/image 3.png" 
+                src={femaleModel} 
                 alt="Female Fashion Model" 
                 className="img-fluid object-fit-contain fashion-model-img"
                 style={{ maxHeight: '520px' }}

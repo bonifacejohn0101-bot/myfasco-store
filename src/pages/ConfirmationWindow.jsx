@@ -1,4 +1,5 @@
 import React from 'react';
+import confirmationBanner from '../assets/Rectangle 19280.png';
 
 const ConfirmationWindow = () => {
   return (
@@ -12,7 +13,7 @@ const ConfirmationWindow = () => {
         {/* Left Side: Image Banner */}
         <div className="col-md-6 p-0 d-none d-md-block">
           <img 
-            src="src/assets/Rectangle 19280.png" 
+            src={confirmationBanner} 
             alt="FASCO Fashion Banner" 
             className="w-100 h-100"
             style={{ objectFit: 'cover', minHeight: '550px' }}

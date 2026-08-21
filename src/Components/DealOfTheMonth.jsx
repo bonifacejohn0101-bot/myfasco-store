@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import springOutfit from '../assets/image (1).png';
+import summerOutfit from '../assets/image (2).png';
+import autumnOutfit from '../assets/image (3).png';
 
 const DealsOfTheMonth = () => {
   const [timeLeft, setTimeLeft] = useState({ days: '02', hours: '06', mins: '05', secs: '30' });
@@ -71,7 +74,7 @@ const DealsOfTheMonth = () => {
               
               <div className="col-md-4 col-sm-6">
                 <div className="position-relative rounded-3 overflow-hidden" style={{ height: '700px' }}>
-                  <img src="src/assets/image (1).png" alt="Spring Outfit" className="w-100 h-100 object-fit-cover" />
+                  <img src={springOutfit} alt="Spring Outfit" className="w-100 h-100 object-fit-cover" />
                   <div className="position-absolute bottom-0 start-0 m-3 bg-white p-3 rounded shadow-sm" style={{ minWidth: '140px' }}>
                     <span className="text-muted d-block small" style={{ fontSize: '0.7_rem' }}>01 — Spring Sale</span>
                     <span className="fw-bold text-dark fs-5">30% OFF</span>
@@ -81,13 +84,13 @@ const DealsOfTheMonth = () => {
 
               <div className="col-md-4 col-sm-6">
                 <div className="rounded-3 overflow-hidden" style={{ height: '650px' }}>
-                  <img src="src/assets/image (2).png" alt="Summer Casual Outfit" className="w-100 h-100 object-fit-cover" />
+                  <img src={summerOutfit} alt="Summer Casual Outfit" className="w-100 h-100 object-fit-cover" />
                 </div>
               </div>
 
               <div className="col-md-4 d-none d-md-block">
                 <div className="rounded-3 " style={{ height: '650px' }}>
-                  <img src="src/assets/image (3).png" alt="Autumn Look Showcase" className="w-100 h-100 object-fit-cover" />
+                  <img src={autumnOutfit} alt="Autumn Look Showcase" className="w-100 h-100 object-fit-cover" />
                 </div>
               </div>
 
