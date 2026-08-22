@@ -1,4 +1,5 @@
 import {NavLink} from "react-router";
+import useRef from "react";
 
 function Navbar() {
   return (
@@ -19,7 +20,7 @@ function Navbar() {
           <NavLink className="nav-link active" to="/shop">Shop</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link active" to="/NewArrivals">New Arrivals</NavLink>
+          <a className="nav-link active" href="#new-arrivals">New Arrivals</a>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link active" to="/Package">Package</NavLink>

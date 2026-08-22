@@ -4,7 +4,7 @@ import { NavLink } from 'react-router';
 import productImage from '../assets/image.png';
 
 const ShoppingCartPage = () => {
-  // Main state matrix managing active line items in the cart view
+  
   const [cartItems, setCartItems] = useState([
     {
       id: 1,

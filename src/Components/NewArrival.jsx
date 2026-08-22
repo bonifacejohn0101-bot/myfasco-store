@@ -94,7 +94,7 @@ import arrivalImage6 from '../assets/Images (6).png';
 
   return (
       
-    <section className="py-5 bg-light" style={{ minHeight: '100vh' }}>
+    <section id="new-arrivals" className="py-5 bg-light" style={{ minHeight: '100vh' }}>
       <div className="container">
         
         {/* Header Section */}
