@@ -74,9 +74,7 @@ const CheckoutPage = () => {
       <div className="container-fluid px-0">
         <div className="row g-0 min-vh-100">
           
-          {/* =========================================================================
-              LEFT COLUMN: ACCORDION USER PROFILE & SECURE TRANSACTIONS FORMS
-              ========================================================================= */}
+          
           <div className="col-lg-7 px-4 px-md-5 py-5 border-end order-2 order-lg-1">
             <form onSubmit={handleOrderSubmission} className="mx-auto" style={{ maxWidth: '580px' }}>
               

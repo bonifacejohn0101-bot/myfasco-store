@@ -48,7 +48,9 @@ const ShoppingCartPage = () => {
         </h1>
         <nav style={{ fontSize: '0.8rem' }}>
           <div className="d-flex justify-content-center gap-2 text-muted">
-            <span>Home</span>
+            <NavLink to="/" className="text-decoration-none text-muted">
+              Home
+            </NavLink>
             <span>&gt;</span>
             <span className="text-dark fw-medium">Your Shopping Cart</span>
           </div>
