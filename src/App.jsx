@@ -23,7 +23,7 @@ import logoFive from './assets/logo copy.png';
 import iconQuality from './assets/icon.png';
 import iconWarranty from './assets/icon (1).png';
 import iconShipping from './assets/2891214031638194523 1.png';
-import iconSupport from './assets/vector.png';
+import iconSupport from './assets/Vector.png';
 
 const App = () => {
   const handleScrollToTop = () => {
