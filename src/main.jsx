@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router';
 
 import App from './App.jsx';
-import Signup from './pages/Signup.jsx';
+import Signup from './pages/signup.jsx';
 import Shop from './pages/Shop.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import ShoppingCartDrawer from './pages/ShoppingCartDrawer.jsx';
