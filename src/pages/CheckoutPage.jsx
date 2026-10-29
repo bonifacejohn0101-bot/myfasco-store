@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useLocation, useNavigate } from 'react-router';
 import productImage from '../assets/image.png';
 
 const CheckoutPage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   // Contact and Shipping Form State
   const [formData, setFormData] = useState({
     email: '',
@@ -24,13 +27,22 @@ const CheckoutPage = () => {
   const [discountCode, setDiscountCode] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState(0); // value in dollars
   
-  const lineItem = {
-    name: 'Mini Dress With Ruffled Straps',
-    color: 'Red',
-    price: 100.00,
-    quantity: 1,
-    img: productImage
-  };
+  const selectedLineItem = location.state?.lineItem;
+  const lineItem = selectedLineItem
+    ? {
+        name: selectedLineItem.name ?? selectedLineItem.title ?? 'Selected product',
+        color: selectedLineItem.color ?? 'Selected',
+        price: Number(selectedLineItem.price),
+        quantity: Number(selectedLineItem.quantity ?? 1),
+        img: selectedLineItem.img ?? selectedLineItem.image ?? productImage,
+      }
+    : {
+        name: 'Mini Dress With Ruffled Straps',
+        color: 'Red',
+        price: 100.00,
+        quantity: 1,
+        img: productImage,
+      };
 
   const subtotal = lineItem.price * lineItem.quantity;
   const shipping = 40.00;
@@ -58,7 +70,15 @@ const CheckoutPage = () => {
 
   const handleOrderSubmission = (e) => {
     e.preventDefault();
-    alert('Processing payment transaction via Secure Gateway node...');
+    navigate('/OrderConfirmation', {
+      state: {
+        order: {
+          lineItem,
+          subtotal,
+          total,
+        },
+      },
+    });
   };
 
   return (

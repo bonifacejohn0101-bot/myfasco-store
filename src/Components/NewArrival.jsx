@@ -228,16 +228,6 @@ function NewArrivals() {
           ))}
         </div>
 
-        {/* View More Button */}
-        <div className="text-center mt-5">
-          <button
-            className="btn btn-dark text-white rounded-3 px-5 py-2 fw-medium border-0 fs-6 shadow-sm"
-            style={{ backgroundColor: '#000' }}
-          >
-            View More
-          </button>
-        </div>
-
       </div>
     </section>
   );

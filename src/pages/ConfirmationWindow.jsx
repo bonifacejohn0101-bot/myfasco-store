@@ -1,7 +1,51 @@
-import React from 'react';
+import { NavLink, useLocation } from 'react-router';
 import confirmationBanner from '../assets/Rectangle 19280.png';
 
 const ConfirmationWindow = () => {
+  const { state } = useLocation();
+  const order = state?.order;
+
+  if (order) {
+    const { lineItem, total } = order;
+
+    return (
+      <div className="container d-flex justify-content-center align-items-center min-vh-100 bg-light py-5">
+        <div className="card border-0 shadow-sm w-100" style={{ maxWidth: '720px', borderRadius: '24px' }}>
+          <div className="card-body p-4 p-md-5 text-center">
+            <h1 className="fw-semibold mb-2">Order confirmed</h1>
+            <p className="text-muted mb-4">Thank you for your purchase.</p>
+
+            <div className="d-flex flex-column flex-sm-row align-items-center gap-4 text-start border rounded-3 p-3 mb-4">
+              <img
+                src={lineItem.img}
+                alt={lineItem.name}
+                className="rounded bg-light"
+                style={{ width: '160px', height: '160px', objectFit: 'contain' }}
+              />
+              <div className="flex-grow-1">
+                <h2 className="h5 fw-semibold">{lineItem.name}</h2>
+                <p className="text-muted mb-2">Color: {lineItem.color}</p>
+                <p className="text-muted mb-2">Quantity: {lineItem.quantity}</p>
+                <p className="fw-semibold mb-0">
+                  ${Number(lineItem.price).toFixed(2)} each
+                </p>
+              </div>
+            </div>
+
+            <div className="d-flex justify-content-between border-top pt-3 mb-4">
+              <span className="fw-semibold">Order total</span>
+              <span className="fw-bold">${Number(total).toFixed(2)}</span>
+            </div>
+
+            <NavLink to="/shop" className="btn btn-dark px-4 py-2">
+              Continue shopping
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
       {/* Main Card Container */}

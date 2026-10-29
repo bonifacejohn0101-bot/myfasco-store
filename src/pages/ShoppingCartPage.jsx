@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavLink } from 'react-router';
 import productImage from '../assets/image.png';
@@ -176,7 +176,12 @@ const ShoppingCartPage = () => {
 
                   {/* Action Navigation CTA Layout buttons */}
                   <div className="d-flex flex-column gap-3 text-center">
-                    <NavLink to='/CheckoutPage' className="btn btn-dark w-100 py-3 text-uppercase rounded-1 font-monospace shadow-sm tracking-wide hover-btn-lift" style={{ fontSize: '0.85rem', letterSpacing: '0.5px' }}>
+                    <NavLink
+                      to="/CheckoutPage"
+                      state={{ lineItem: cartItems[0] }}
+                      className="btn btn-dark w-100 py-3 text-uppercase rounded-1 font-monospace shadow-sm tracking-wide hover-btn-lift"
+                      style={{ fontSize: '0.85rem', letterSpacing: '0.5px' }}
+                    >
                       Checkout
                     </NavLink>
                     <a href="#view-cart" className="text-decoration-none text-dark small fw-medium border-bottom border-dark pb-0.5 d-inline-block mx-auto transition-all">

@@ -29,6 +29,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/ShoppingCartPage" element={<ShoppingCartPage />} />
         <Route path="/Signin" element={<Signin />} />
         <Route path="/CheckoutPage" element={<CheckoutPage />} />
+        <Route path="/OrderConfirmation" element={<ConfirmationWindow />} />
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route
           path="/ForgetPassword/ConfirmationWindow"

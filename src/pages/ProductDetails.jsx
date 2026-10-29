@@ -6,14 +6,31 @@ import productImage4 from '../assets/image (3).png';
 import productImage5 from '../assets/image (4).png';
 import productImage6 from '../assets/image (6).png';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const MAIN_IMAGE_HEIGHT = '680px';
+const MAIN_IMAGE_WIDTH = '100%';
+const THUMBNAIL_SIZE = '80px';
+const THUMBNAIL_GAP = '8px';
+const DRAWER_WIDTH = '440px';
+const DRAWER_IMAGE_HEIGHT = '160px';
 
 const ProductDetails = () => {
   // Gallery Image State
 
   const [data, setData] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const images = [
+    productImage1, // Red/Denim jacket view
+    productImage2,
+    productImage3,
+    productImage4,
+    productImage5,
+    productImage6
+  ];
+  const [activeImage, setActiveImage] = useState(images[1]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,16 +44,6 @@ const ProductDetails = () => {
     };
     fetchData();
   }, []);
-
-  const images = [
-    productImage1, // Red/Denim jacket view
-    productImage2,
-    productImage3,
-    productImage4,
-    productImage5,
-    productImage6
-  ];
-  const [activeImage, setActiveImage] = useState(images[1]);
 
   // Interactive Configuration States
   const [selectedSize, setSelectedSize] = useState('M');
@@ -96,7 +103,14 @@ const ProductDetails = () => {
             <div className="d-flex gap-3 h-100">
               
               {/* Vertical Side Thumbnail Track */}
-              <div className="d-flex flex-column gap-2" style={{ width: '80px', minWidth: '80px' }}>
+              <div
+                className="d-flex flex-column"
+                style={{
+                  width: THUMBNAIL_SIZE,
+                  minWidth: THUMBNAIL_SIZE,
+                  gap: THUMBNAIL_GAP,
+                }}
+              >
                 {data.map((item) => (
                   <div 
                     key={item.id}
@@ -104,22 +118,32 @@ const ProductDetails = () => {
                       setActiveImage(item.image);
                       setSelectedProduct(item);
                     }}
-                    className={`ratio ratio-1x1 rounded overflow-hidden cursor-pointer thumbnail-frame border ${
+                    className={`ratio ratio-1x1 bg-white rounded overflow-hidden cursor-pointer thumbnail-frame border ${
                       activeImage === item.image ? 'border-dark border-2' : 'border-light-subtle'
                     }`}
+                    style={{ width: THUMBNAIL_SIZE, height: THUMBNAIL_SIZE }}
                   >
-                    <img src={item.image} alt={item.title} className="object-fit-cover w-100 h-100" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-100 h-100"
+                      style={{ objectFit: 'contain' }}
+                    />
                   </div>
                 ))}
               </div>
 
               {/* Main Display Stage Container */}
-              <div className="flex-grow-1 bg-light rounded overflow-hidden" style={{ maxHeight: '680px' }}>
+              <div
+                className="flex-grow-1 bg-white border border-light-subtle rounded overflow-hidden"
+                style={{ height: MAIN_IMAGE_HEIGHT }}
+              >
             
                 <img 
                   src={activeImage} 
-                  alt="Denim Jacket Main Display" 
-                  className="w-100 h-100 object-fit-cover main-display-node"
+                  alt={selectedProduct?.title || 'Product image'}
+                  className="w-100 h-100 main-display-node"
+                  style={{ width: MAIN_IMAGE_WIDTH, objectFit: 'contain' }}
                 />
               </div>
 
@@ -321,7 +345,7 @@ const ProductDetails = () => {
         }`}
         style={{ 
           width: '100%', 
-          maxWidth: '440px', 
+          maxWidth: DRAWER_WIDTH,
           fontFamily: "'Poppins', sans-serif",
           transform: drawerOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
@@ -347,18 +371,26 @@ const ProductDetails = () => {
             
             {/* Product Thumbnail Card Image */}
             <div className="col-4">
-              <div className="ratio ratio-1x1 bg-light rounded overflow-hidden border">
-                <img src={activeImage} alt="Denim Jacket" className="object-fit-cover w-100 h-100" />
+              <div
+                className="bg-white rounded overflow-hidden border"
+                style={{ height: DRAWER_IMAGE_HEIGHT }}
+              >
+                <img
+                  src={activeImage}
+                  alt={productTitle}
+                  className="w-100 h-100"
+                  style={{ objectFit: 'contain' }}
+                />
               </div>
             </div>
 
             {/* Title Specification Metrics Metadata block */}
             <div className="col-8 d-flex flex-column justify-content-between h-100 ps-2">
               <div>
-                <h4 className="h6 text-dark fw-semibold mb-1" style={{ fontSize: '0.92rem' }}>Denim Jacket</h4>
+                <h4 className="h6 text-dark fw-semibold mb-1" style={{ fontSize: '0.92rem' }}>{productTitle}</h4>
                 <p className="text-muted small mb-1">Color : <span className="text-dark-emphasis">{selectedColor}</span></p>
                 <p className="text-muted small mb-2">Size : <span className="text-dark-emphasis">{selectedSize}</span></p>
-                <div className="fw-semibold text-dark mb-3">$39.50</div>
+                <div className="fw-semibold text-dark mb-3">{productPrice}</div>
               </div>
 
               {/* Stepper Quantity Mechanic Panel */}
@@ -405,12 +437,27 @@ const ProductDetails = () => {
           {/* Order Total Presentation */}
           <div className="d-flex justify-content-between align-items-center mb-4 text-start">
             <span className="fw-semibold text-dark" style={{ fontSize: '0.95rem' }}>Order Total</span>
-            <span className="fw-bold text-dark fs-5">${(39.50 * quantity).toFixed(2)}</span>
+            <span className="fw-bold text-dark fs-5">
+              ${(Number(selectedProduct?.price ?? 39.5) * quantity).toFixed(2)}
+            </span>
           </div>
 
           {/* Checkout CTA Task Buttons System */}
           <div className="d-flex flex-column gap-2.5">
-            <NavLink to='/CheckoutPage' className="btn btn-dark w-100 py-3 text-uppercase rounded-1 font-monospace shadow-sm tracking-wide" style={{ fontSize: '0.85rem', letterSpacing: '0.5px', textDecoration: 'none' }}>
+            <NavLink
+              to="/CheckoutPage"
+              state={{
+                lineItem: {
+                  name: productTitle,
+                  color: selectedColor,
+                  price: Number(selectedProduct?.price ?? 39.5),
+                  quantity,
+                  img: activeImage,
+                },
+              }}
+              className="btn btn-dark w-100 py-3 text-uppercase rounded-1 font-monospace shadow-sm tracking-wide"
+              style={{ fontSize: '0.85rem', letterSpacing: '0.5px', textDecoration: 'none' }}
+            >
               Proceed to Checkout
             </NavLink>
             <button 

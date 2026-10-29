@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router';
 import productImage from "../assets/image.png";
 const ShoppingCartDrawer = () => {
@@ -150,7 +150,12 @@ const ShoppingCartDrawer = () => {
 
           {/* Checkout CTA Task Buttons System */}
           <div className="d-flex flex-column gap-2.5">
-            <NavLink to='/CheckoutPage' className="btn btn-dark w-100 py-3 text-uppercase rounded-1 font-monospace shadow-sm tracking-wide" style={{ fontSize: '0.85rem', letterSpacing: '0.5px' }}>
+            <NavLink
+              to="/CheckoutPage"
+              state={{ lineItem: cartItem }}
+              className="btn btn-dark w-100 py-3 text-uppercase rounded-1 font-monospace shadow-sm tracking-wide"
+              style={{ fontSize: '0.85rem', letterSpacing: '0.5px' }}
+            >
               Checkout
             </NavLink>
             <NavLink to="/ShoppingCartPage" className="text-decoration-none text-dark small fw-medium border-bottom border-dark pb-0.5 d-inline-block mx-auto mt-1 transition-all">
