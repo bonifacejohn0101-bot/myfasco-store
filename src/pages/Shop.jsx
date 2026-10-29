@@ -1,4 +1,4 @@
-import PeakyBlinderSelection from "../Components/PeakyBlinderSelection";
+import PeakyBlindersCard from "../Components/PeakyBlinderSelection";
 import NavBar2 from "../Components/NavBar2";
 import {useEffect, useState} from "react";
 import shopImage1 from '../assets/Link ⏵ responsive-image (1).png';
@@ -320,7 +320,7 @@ export default function FashionShop() {
         </div>
       </div>
       <div className="container my-5">
-        <PeakyBlinderSelection />
+        <PeakyBlindersCard />
       </div>
     </div>
   );

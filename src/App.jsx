@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 import DealsOfTheMonth from './Components/DealOfTheMonth';
 import NewArrivals from './Components/NewArrival';
-import PeakyBlindersSection from './Components/PeakyBlinderSelection';
+import PeakyBlindersCard from './Components/PeakyBlinderSelection';
 import InstagramFeed from './Components/instagramFeed';
 import CustomerTestimonials from './Components/CustomerTestimonial';
 import NewLetterFooter from './Components/NewLetterFooter';
@@ -257,7 +257,7 @@ const App = () => {
 
       {/* Featured Collection */}
       <section className="container-fluid px-3 px-lg-5 py-4">
-        <PeakyBlindersSection />
+        <PeakyBlindersCard />
       </section>
 
       {/* Features */}
