@@ -8,11 +8,13 @@ import arrivalImage6 from '../assets/Images (6).png';
 function NewArrivals() {
   const [data, setData] = useState([]);
   const [activeCategory, setActiveCategory] = useState("Women's Fashion");
+  const [showAllProducts, setShowAllProducts] = useState(false);
 
   // CONTROL THE SIZES HERE
   const IMAGE_WIDTH = '100%';
   const IMAGE_HEIGHT = '260px';
   const CARD_WIDTH = '380px';
+  const INITIAL_PRODUCT_COUNT = 6;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -130,7 +132,10 @@ function NewArrivals() {
 
         {/* Product Grid */}
         <div className="row g-4 justify-content-center">
-          {products.map((item) => (
+          {(showAllProducts
+            ? products
+            : products.slice(0, INITIAL_PRODUCT_COUNT)
+          ).map((item) => (
             <div
               key={item.id}
               className="col-12 col-md-6 col-lg-4 d-flex justify-content-center"
@@ -227,6 +232,19 @@ function NewArrivals() {
             </div>
           ))}
         </div>
+
+        {products.length > INITIAL_PRODUCT_COUNT && (
+          <div className="text-center mt-5">
+            <button
+              type="button"
+              onClick={() => setShowAllProducts((showAll) => !showAll)}
+              className="btn btn-dark text-white rounded-3 px-5 py-2 fw-medium border-0 fs-6 shadow-sm"
+              style={{ backgroundColor: '#000' }}
+            >
+              {showAllProducts ? 'View Less' : 'View More'}
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

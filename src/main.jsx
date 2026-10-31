@@ -1,7 +1,7 @@
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 
 import App from './App.jsx';
 import Signup from './pages/signup.jsx';
@@ -17,18 +17,65 @@ import ConfirmationWindow from './pages/ConfirmationWindow.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    return <Navigate to="/Signin" replace />;
+  }
+
+  return children;
+};
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/app" element={<App />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/ProductDetails" element={<ProductDetails />} />
-        <Route path="/ShoppingCartDrawer" element={<ShoppingCartDrawer />} />
-        <Route path="/ShoppingCartPage" element={<ShoppingCartPage />} />
         <Route path="/Signin" element={<Signin />} />
-        <Route path="/CheckoutPage" element={<CheckoutPage />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route
+          path="/shop"
+          element={
+            <ProtectedRoute>
+              <Shop />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/ProductDetails"
+          element={
+            <ProtectedRoute>
+              <ProductDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/ShoppingCartDrawer"
+          element={
+            <ProtectedRoute>
+              <ShoppingCartDrawer />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/ShoppingCartPage"
+          element={
+            <ProtectedRoute>
+              <ShoppingCartPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/CheckoutPage"
+          element={
+            <ProtectedRoute>
+              <CheckoutPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/OrderConfirmation" element={<ConfirmationWindow />} />
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route
@@ -38,6 +85,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Signup/Signin" element={<Signin />} />
         <Route path="/ForgetPassword/Signin" element={<Signin />} />
         <Route path="/Signin/Signup" element={<Signup />} />
+        <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
